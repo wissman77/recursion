@@ -17,3 +17,16 @@ function fibs(n) {
 // Test Cases
 console.log(fibs(8));
 console.log(fibs(10));
+
+// Recursive version
+function fibsRec(n, array = [0, 1]) {
+  if (array.length >= n) return array;
+  return fibsRec(n, [
+    ...array,
+    array[array.length - 1] + array[array.length - 2],
+  ]);
+}
+
+// Test Cases
+console.log(fibs(8));
+console.log(fibs(10));
