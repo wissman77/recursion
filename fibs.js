@@ -3,7 +3,7 @@
 // Iteration version
 function fibs(n) {
   const fibSequence = [0, 1];
-  if (n <= 1) return fibSequence[0];
+  if (n <= 1) return [fibSequence[0]];
 
   while (n > 2) {
     const nextNumber =
@@ -15,11 +15,13 @@ function fibs(n) {
 }
 
 // Test Cases
+console.log(fibs(1));
 console.log(fibs(8));
 console.log(fibs(10));
 
 // Recursive version
 function fibsRec(n, array = [0, 1]) {
+  if (n <= 1) return [array[0]];
   if (array.length >= n) return array;
   return fibsRec(n, [
     ...array,
@@ -28,5 +30,6 @@ function fibsRec(n, array = [0, 1]) {
 }
 
 // Test Cases
-console.log(fibs(8));
-console.log(fibs(10));
+console.log(fibsRec(1));
+console.log(fibsRec(8));
+console.log(fibsRec(10));
